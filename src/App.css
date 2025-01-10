@@ -27,7 +27,7 @@ h1 {
 .TodoWrapper {
     background: rgba(26, 26, 64, 0.8);
     border: rgba(26, 26, 64) 3px solid;
-	margin-top: 5rem;
+	margin-block: 5rem;
 	padding: 2rem;
 	border-radius: 5px;
 }
