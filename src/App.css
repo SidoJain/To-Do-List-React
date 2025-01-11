@@ -5,10 +5,12 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+    --dark: #4a27a2;
+    --light: #8B5DFF;
 }
 
 body {
-	background: #8758ff;
+	background: var(--light);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -16,6 +18,7 @@ body {
 
 .App {
 	text-align: center;
+    margin-inline: 2rem;
 }
 
 h1 {
@@ -25,8 +28,9 @@ h1 {
 }
 
 .TodoWrapper {
-    background: rgba(26, 26, 64, 0.8);
-    border: rgba(26, 26, 64) 3px solid;
+    background: var(--dark);
+    opacity: 0.9;
+    border: 3px solid;
 	margin-block: 5rem;
 	padding: 2rem;
 	border-radius: 5px;
@@ -40,7 +44,7 @@ h1 {
 .todo-input {
 	outline: none;
 	background: none;
-	border: 1px solid #8758ff;
+	border: 1px solid var(--light);
 	padding: 0.5rem 1rem;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
@@ -53,7 +57,7 @@ h1 {
 }
 
 .todo-btn {
-	background: #8758ff;
+	background: var(--light);
 	color: #fff;
 	border: none;
 	padding: 0.55rem;
@@ -65,7 +69,7 @@ h1 {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background: #8758ff;
+	background: var(--light);
     max-width: 400px;
 	color: #fff;
 	padding: 0.75rem 1rem;
@@ -74,7 +78,7 @@ h1 {
 }
 
 .Todo p {
-    max-width: 70%;
+    width: 65%;
     word-wrap: break-word;
     text-align: left;
 }
@@ -90,12 +94,19 @@ h1 {
 	cursor: pointer;
 }
 
+.icons {
+    width: 30%;
+}
+
 .edit-icon,
 .delete-icon,
 .copy-icon {
 	cursor: pointer;
-	margin: 0 0.5rem;
 	color: #fff;
+}
+
+.edit-icon {
+    margin-inline: 0.5rem;
 }
 
 @keyframes copyAnimation {
@@ -106,4 +117,29 @@ h1 {
 
 .copy-icon.clicked {
     animation: copyAnimation 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 450px) {
+    .TodoWrapper {
+        max-width: 90%;
+        margin: 2rem auto;
+    }
+
+    .todo-input {
+        width: 90%;
+    }
+
+    .Todo p {
+        font-size: 12px;
+    }
+
+    .copy-icon,
+    .edit-icon,
+    .delete-icon {
+        font-size: 0.75rem;
+    }
+
+    .delete-icon {
+        margin-right: 0.25rem;
+    }
 }

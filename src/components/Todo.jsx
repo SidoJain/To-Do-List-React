@@ -19,7 +19,7 @@ export const Todo = ({ task, deleteTodo, editTodo, toggleComplete }) => {
             <p className={`${task.completed ? "completed" : "incompleted"}`} onClick={() => toggleComplete(task.id)}>
                 {task.task}
             </p>
-            <div>
+            <div className="icons">
                 <FontAwesomeIcon className={`copy-icon ${isClicked ? 'clicked' : ''}`} icon={faCopy} onClick={() => copyToClipboard(task.task)} />
                 <FontAwesomeIcon className="edit-icon" icon={faPenToSquare} onClick={() => editTodo(task.id)} />
                 <FontAwesomeIcon className="delete-icon" icon={faTrash} onClick={() => deleteTodo(task.id)} />
